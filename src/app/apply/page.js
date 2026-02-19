@@ -1,33 +1,39 @@
+import Link from "next/link";
 import React from "react";
 
 const page = () => {
   const positions = [
     {
       title: "E-book Typing Jobs",
+      herf:'typing-project',
       description:
         "Simple typing work: type content from book page images directly into Notepad. No complex software required.",
       tasks: ["Type in Notepad", "Simple Image to Text", "Flexible Work Timing"],
     },
     {
       title: "Data Entry Specialist",
+       herf:'typing-project',
       description:
         "Input alpha-numeric data into corporate systems. Update CRM records and manage spreadsheets with precision.",
       tasks: ["Excel & database management", "Online form processing", "Data verification protocols"],
     },
     {
       title: "Document Control",
+       herf:'typing-project',
       description:
         "Restore and digitize non-editable files. Correct OCR errors and manually re-type content from PDF/image sources.",
       tasks: ["PDF to Word conversion", "Image-to-text transcription", "Layout reconstruction"],
     },
     {
       title: "Audio Transcriptionist",
+       herf:'typing-project',
       description:
         "Convert spoken audio into written text. Accurately transcribe interviews, meetings, and dictations.",
       tasks: ["Audio/Video transcription", "Time-stamping services", "Subtitling assistance"],
     },
     {
       title: "Sector Specialist",
+       herf:'typing-project',
       description:
         "Specialized data roles needing familiarity with medical, legal, or retail terminology.",
       tasks: ["Medical/Legal data entry", "E-commerce product logs", "Technical formatting"],
@@ -66,9 +72,11 @@ const page = () => {
               </div>
 
               {/* Apply Button */}
-              <button className="mt-4 bg-[#362F4F] text-white rounded-lg py-2 px-4 hover:bg-[#2c263f] transition-colors duration-200 font-semibold">
+              <Link href={job?.herf}>
+              <button  className="mt-4 bg-[#362F4F] text-white rounded-lg py-2 px-4 hover:bg-[#2c263f] transition-colors duration-200 font-semibold">
                 View Details & Apply
               </button>
+              </Link>
             </div>
           ))}
         </div>

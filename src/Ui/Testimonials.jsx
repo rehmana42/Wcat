@@ -1,6 +1,5 @@
-import { FileQuestionMarkIcon, Quote } from "lucide-react";
+import { Quote } from "lucide-react";
 import React from "react";
-
 
 const testimonials = [
   {
@@ -69,29 +68,40 @@ const Testimonials = () => {
   return (
     <div className="bg-gradient-to-r from-purple-50 to-blue-50 py-24">
       <div className="max-w-7xl mx-auto px-4 flex flex-col items-center gap-12">
-        <h1 className="text-5xl font-extrabold text-[#362F4F] text-center mb-4">
+        {/* Title */}
+        <h1 className="text-4xl sm:text-5xl font-extrabold text-[#362F4F] text-center mb-4">
           What Our Users Say
         </h1>
-        <p className="text-center text-gray-500 max-w-2xl mb-12">
-          Hear from real users who experienced smooth, professional, and flexible support from Earn From Tasks.
+        <p className="text-center text-gray-500 max-w-2xl mb-12 text-base sm:text-lg">
+          Hear from real users who experienced smooth, professional, and flexible
+          support from Earn From Tasks.
         </p>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10 w-full">
+        {/* Testimonials Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 w-full">
           {testimonials.map((t, idx) => (
             <div
               key={idx}
-              className="relative bg-white p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-transform duration-300 transform hover:-translate-y-2"
+              className="relative bg-white p-6 sm:p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-transform duration-300 transform hover:-translate-y-2 flex flex-col justify-between"
             >
               {/* Quote Icon */}
-              <Quote className="absolute -top-4 -left-4 text-purple-300 text-3xl" />
+              <Quote className="absolute -top-4 -left-4 text-purple-300 text-2xl sm:text-3xl" />
 
-              <p className="text-gray-700 text-lg font-medium mb-6">{t.message}</p>
+              {/* Message */}
+              <p className="text-gray-700 text-base sm:text-lg font-medium mb-6">
+                {t.message}
+              </p>
+
+              {/* User Info */}
               <div>
-                <h3 className="text-xl font-bold text-gray-900">{t.name}</h3>
-                <span className="text-gray-500 text-sm">{t.role}</span>
+                <h3 className="text-lg sm:text-xl font-bold text-gray-900">
+                  {t.name}
+                </h3>
+                <span className="text-gray-500 text-sm sm:text-base">{t.role}</span>
               </div>
+
               {/* Decorative accent */}
-              <div className="absolute -bottom-3 right-6 w-12 h-1 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full"></div>
+              <div className="absolute -bottom-3 right-6 w-10 sm:w-12 h-1 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full"></div>
             </div>
           ))}
         </div>

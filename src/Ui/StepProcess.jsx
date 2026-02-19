@@ -1,82 +1,83 @@
-import Image from 'next/image'
-import React from 'react'
+import Image from "next/image";
+import React from "react";
+
+const steps = [
+  {
+    title: "1. Submit Your Project",
+    description:
+      "Send us your raw files (PDFs, Images, Audio) and specific requirements via our secure portal.",
+    img: "/step1.png",
+    color: "blue",
+  },
+  {
+    title: "2. Review & Feedback",
+    description:
+      "Our team reviews your project and provides detailed feedback to ensure quality and clarity.",
+    img: "/step2.svg",
+    color: "green",
+    reverse: true,
+  },
+  {
+    title: "3. Approval & Confirmation",
+    description:
+      "Once feedback is addressed, you approve the final version for production or delivery.",
+    img: "/step5.svg",
+    color: "yellow",
+  },
+];
 
 const StepProcess = () => {
   return (
-    <div  className=' mt-24 flex flex-col gap-4 px-6'>
-        <h1 className='text-5xl font-extrabold text-[#362F4F] text-center'>Simple Step Process</h1>
-      
-     <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8 space-y-16">
-  {/* Step 1 */}
-  <div className="flex flex-col sm:flex-row items-center gap-8">
-    {/* Text */}
-    <div className="w-full sm:w-1/3 flex flex-col items-center sm:items-start gap-4 p-6 rounded-xl shadow-2xl shadow-blue-200 bg-white transition-all hover:scale-110 duration-300">
-      <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900">
-        1. Submit Your Project
-      </h2>
-      <p className="text-base sm:text-lg text-gray-600 font-medium w-full sm:w-[90%] text-center sm:text-left">
-        Send us your raw files (PDFs, Images, Audio) and specific requirements via our secure portal.
-      </p>
-    </div>
-    {/* Image */}
-    <div className="relative w-full sm:w-[35vw] h-[40vh] sm:h-[50vh] rounded-2xl overflow-hidden shadow-lg">
-      <Image
-        src="/step1.png"
-        fill
-        alt="Submit Project Illustration"
-        className="object-contain"
-      />
-    </div>
-  </div>
+    <section className="py-20 px-4 sm:px-6 lg:px-10 bg-gray-50">
+      <div className="max-w-4xl mx-auto text-center mb-16">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#362F4F] leading-tight">
+          Simple Step Process
+        </h2>
+        <p className="mt-4 text-gray-500 text-sm sm:text-base md:text-lg">
+          Follow our easy 3-step process to submit, review, and approve your project.
+        </p>
+      </div>
 
-  {/* Separator */}
-  <div className="border-t-2 border-gray-200 mx-auto w-3/4"></div>
+      <div className="flex flex-col gap-20 max-w-7xl mx-auto">
+        {steps.map((step, idx) => (
+          <div
+            key={idx}
+            className={`flex flex-col ${
+              step.reverse ? "sm:flex-row-reverse" : "sm:flex-row"
+            } items-center gap-8`}
+          >
+            {/* Text Card */}
+            <div
+              className={`w-full sm:w-1/3 flex flex-col items-center sm:items-start gap-4 p-6 sm:p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-transform duration-300 bg-white border-l-4 ${
+                step.color === "blue"
+                  ? "border-blue-500"
+                  : step.color === "green"
+                  ? "border-green-400"
+                  : "border-yellow-400"
+              }`}
+            >
+              <h3 className="text-2xl sm:text-3xl font-extrabold text-gray-900 text-center sm:text-left">
+                {step.title}
+              </h3>
+              <p className="text-gray-600 text-sm sm:text-base text-center sm:text-left">
+                {step.description}
+              </p>
+            </div>
 
-  {/* Step 2 */}
-  <div className="flex flex-col sm:flex-row-reverse items-center gap-8">
-    <div className="w-full sm:w-1/3 flex flex-col items-center sm:items-start gap-4 p-6 rounded-xl shadow-2xl shadow-green-200 bg-white transition-all hover:scale-110 duration-300">
-      <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900">
-        2. Review & Feedback
-      </h2>
-      <p className="text-base sm:text-lg text-gray-600 font-medium w-full sm:w-[90%] text-center sm:text-left">
-        Our team reviews your project and provides detailed feedback to ensure quality and clarity.
-      </p>
-    </div>
-    <div className="relative w-full sm:w-[35vw] h-[40vh] sm:h-[50vh] rounded-2xl overflow-hidden shadow-lg">
-      <Image
-        src="/step2.svg"
-        fill
-        alt="Review Project Illustration"
-        className="object-contain"
-      />
-    </div>
-  </div>
+            {/* Image */}
+            <div className="relative w-full sm:w-2/3 h-64 sm:h-80 lg:h-96 rounded-2xl overflow-hidden shadow-md">
+              <Image
+                src={step.img}
+                alt={step.title}
+                fill
+                className="object-contain"
+              />
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+};
 
-  {/* Separator */}
-  <div className="border-t-2 border-gray-200 mx-auto w-3/4"></div>
-
-  {/* Step 3 */}
-  <div className="flex flex-col sm:flex-row items-center gap-8">
-    <div className="w-full sm:w-1/3 flex flex-col items-center sm:items-start gap-4 p-6 rounded-xl shadow-2xl shadow-yellow-200 bg-white transition-all hover:scale-110 duration-300">
-      <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900">
-        3. Approval & Confirmation
-      </h2>
-      <p className="text-base sm:text-lg text-gray-600 font-medium w-full sm:w-[90%] text-center sm:text-left">
-        Once feedback is addressed, you approve the final version for production or delivery.
-      </p>
-    </div>
-    <div className="relative w-full sm:w-[35vw] h-[40vh] sm:h-[50vh] rounded-2xl overflow-hidden shadow-lg">
-      <Image
-        src="/step5.svg"
-        fill
-        alt="Approval Illustration"
-        className="object-contain"
-      />
-    </div>
-  </div>
-    </div>
-    </div>
-  )
-}
-
-export default StepProcess
+export default StepProcess;

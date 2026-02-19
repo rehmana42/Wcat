@@ -1,62 +1,60 @@
+"use client";
+
 import React from "react";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
-import { ChevronDown } from "lucide-react"; // optional icon library
+import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
+
+const faqs = [
+  {
+    question: "What types of projects can I submit?",
+    answer:
+      "You can submit documents, images, PDFs, audio files, or any data entry tasks. Our team will guide you through the proper submission process.",
+  },
+  {
+    question: "How quickly will I get feedback?",
+    answer:
+      "Feedback is usually provided within 24-48 hours depending on the project size. We prioritize urgent tasks as well.",
+  },
+  {
+    question: "Is my data secure?",
+    answer:
+      "Absolutely! All submissions are protected by NDA and encrypted storage to ensure your data remains private.",
+  },
+  {
+    question: "What payment methods are supported?",
+    answer:
+      "We offer multiple payment options including NEFT, IMPS, and UPI. Payments are processed within 24 working hours of task approval.",
+  },
+];
 
 const Faq = () => {
   return (
-    <div className="bg-gray-50 py-24">
-      <div className="max-w-5xl mx-auto flex flex-col items-center gap-12 px-4">
-        <h1 className="text-5xl font-extrabold text-[#362F4F] text-center">
-        Frequently Asked Questions
-        </h1>
+    <section className="py-20 px-4 sm:px-6 lg:px-10 bg-gray-50">
+      {/* Heading */}
+      <div className="text-center max-w-3xl mx-auto mb-16">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#362F4F] leading-tight">
+          Frequently Asked Questions
+        </h2>
+        <p className="mt-4 text-gray-500 text-sm sm:text-base md:text-lg">
+          Find answers to the most common questions about our services and processes.
+        </p>
+      </div>
 
-        <Accordion type="single" collapsible defaultValue="item-1" className="flex flex-col gap-6 w-full">
-          <AccordionItem
-            value="item-1"
-            className="bg-white rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300"
-          >
-            <AccordionTrigger className="flex justify-between items-center w-full p-6 text-2xl font-bold text-[#000957] rounded-2xl cursor-pointer hover:bg-blue-50 transition-colors duration-200">
-              What is your typical turnaround time?
-              <ChevronDown className="w-6 h-6 text-gray-400" />
-            </AccordionTrigger>
-            <AccordionContent className="px-6 pb-6 text-gray-600 text-lg font-medium">
-              Our typical turnaround time depends on project complexity. Simple tasks can take 24–48 hours, while larger projects are scheduled accordingly with clear deadlines.
-            </AccordionContent>
-          </AccordionItem>
-
-          <AccordionItem
-            value="item-2"
-            className="bg-white rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300"
-          >
-            <AccordionTrigger className="flex justify-between items-center w-full p-6 text-2xl font-bold text-[#000957] rounded-2xl cursor-pointer hover:bg-green-50 transition-colors duration-200">
-              Do you use software or manual typing?
-              <ChevronDown className="w-6 h-6 text-gray-400" />
-            </AccordionTrigger>
-            <AccordionContent className="px-6 pb-6 text-gray-600 text-lg font-medium">
-              We believe in "Human-in-the-Loop." While we use tools for efficiency, all data is manually typed or verified by human experts to ensure context and handwriting are interpreted correctly.
-            </AccordionContent>
-          </AccordionItem>
-
-          <AccordionItem
-            value="item-3"
-            className="bg-white rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300"
-          >
-            <AccordionTrigger className="flex justify-between items-center w-full p-6 text-2xl font-bold text-[#000957] rounded-2xl cursor-pointer hover:bg-pink-50 transition-colors duration-200">
-              Can you handle confidential legal or medical data?
-              <ChevronDown className="w-6 h-6 text-gray-400" />
-            </AccordionTrigger>
-            <AccordionContent className="px-6 pb-6 text-gray-600 text-lg font-medium">
-              Yes. We specialize in sensitive data. We are happy to sign NDAs and utilize encrypted file transfer methods to ensure your client data remains 100% secure.
-            </AccordionContent>
-          </AccordionItem>
+      {/* ShadCN Accordion */}
+      <div className="max-w-4xl mx-auto">
+        <Accordion type="single" collapsible className="space-y-4">
+          {faqs.map((faq, idx) => (
+            <AccordionItem key={idx} value={`item-${idx}`} className="border rounded-2xl bg-white shadow-sm hover:shadow-md">
+              <AccordionTrigger className="px-6 py-4 text-left text-gray-900 font-semibold text-base sm:text-lg">
+                {faq.question}
+              </AccordionTrigger>
+              <AccordionContent className="px-6 py-4 text-gray-600 text-sm sm:text-base">
+                {faq.answer}
+              </AccordionContent>
+            </AccordionItem>
+          ))}
         </Accordion>
       </div>
-    </div>
+    </section>
   );
 };
 
