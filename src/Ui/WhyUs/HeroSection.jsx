@@ -1,43 +1,44 @@
 "use client"
 import React from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 const HeroSection = () => {
-  const cards = [
-    {
-      title: "Accuracy",
-      color: "text-blue-700",
-      description: "Two-Tier review ensures 99.9% precision",
-    },
-    {
-      title: "Security",
-      color: "text-blue-400",
-      description: "Encrypted and confidential processing",
-    },
-    {
-      title: "Scalability",
-      color: "text-blue-600",
-      description: "Handle large volumes instantly",
-    },
-    {
-      title: "Cost-Effective",
-      color: "text-blue-300",
-      description: "Pay only for what’s delivered",
-    },
-    {
-      title: "Human Advantage",
-      color: "text-blue-900",
-      description: "Experts handle handwritten & tricky data",
-    },
-    {
-      title: "24/7 Workflow",
-      color: "text-blue-300",
-      description: "Global team works while you sleep",
-    },
-  ];
+    const cards = [
+        {
+          title: "Accuracy",
+          color: "text-blue-700",
+          description: "Two-Tier review ensures 99.9% precision",
+        },
+        {
+          title: "Security",
+          color: "text-blue-400",
+          description: "Encrypted and confidential processing",
+        },
+        {
+          title: "Scalability",
+          color: "text-blue-600",
+          description: "Handle large volumes instantly",
+        },
+        {
+          title: "Cost-Effective",
+          color: "text-blue-300",
+          description: "Pay only for what’s delivered",
+        },
+        {
+          title: "Human Advantage",
+          color: "text-blue-900",
+          description: "Experts handle handwritten & tricky data",
+        },
+        {
+          title: "24/7 Workflow",
+          color: "text-blue-300",
+          description: "Global team works while you sleep",
+        },
+      ];
 
   return (
     <div className="w-full  py-12">
-      <div className=" flex flex-col md:flex-row gap-10">
+      <div className=" flex flex-col md:flex-row gap-10 px-6">
         {/* Hero Intro */}
         <motion.div
          initial={{ opacity:0, x:-50}}
@@ -72,14 +73,14 @@ Privacy: Data deleted upon project completion.
         </motion.div>
 
         {/* Zig-Zag Compact Cards */}
-<div className="md:w-1/2 flex flex-col gap-3">
+       <div className="md:w-1/2 flex flex-col place-self-center gap-3">
   {cards.map((card, idx) => (
     <motion.div
       animate={{ y: [0, -20, 0] }} // move up and down
       transition={{
         duration: 2,
-        repeat: Infinity,      // repeat forever
-        repeatType: "loop",    // loop the animation
+        repeat: Infinity,
+        repeatType: "loop",
         ease: "easeInOut",
       }}
       key={idx}
@@ -88,18 +89,25 @@ Privacy: Data deleted upon project completion.
     >
       {/* Card Content */}
       <div className="w-full md:w-1/2 bg-white rounded-lg shadow-sm p-3 hover:scale-105 transition-transform duration-200">
-        <h2 className={`text-sm font-bold mb-1 ${card.color}`}>
-          {card.title}
-        </h2>
+        <h2 className={`text-sm font-bold mb-1 ${card.color}`}>{card.title}</h2>
         <p className="text-xs text-gray-600">{card.description}</p>
       </div>
 
-      {/* Empty Spacer for Zig-Zag (only on desktop) */}
+      {/* Spacer for Zig-Zag (only on desktop) */}
       <div className="hidden md:block md:w-1/2"></div>
     </motion.div>
   ))}
 </div>
-
+        {/* <div
+        className="relative w-full h-[500px]  flex items-center justify-center"
+        >
+        <Image
+         src='/whyUs.svg'
+          fill
+          alt="hii"
+          className=" object-contain"
+        />
+        </div> */}
       </div>
     </div>
   );

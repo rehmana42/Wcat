@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 const QualityProcess = () => {
@@ -29,33 +30,51 @@ const QualityProcess = () => {
   ];
 
   return (
-    <section className="w-full py-16 bg-white">
-      <div className="max-w-4xl mx-auto px-6 flex flex-col gap-12">
+    <section className="relative w-full py-20 overflow-hidden">
+      
+      {/* Background Image */}
+      <div className="absolute inset-0 -z-10">
+        <Image
+          src="/service2.jpg"
+          alt="Quality Assurance Background"
+          fill
+          className="object-cover"
+          priority
+        />
+        {/* Overlay */}
+        <div className="absolute inset-0  bg-transparent"></div>
+      </div>
 
+      {/* Content */}
+      <div className="relative z-10 max-w-4xl mx-auto px-6 flex flex-col gap-12">
+        
         {/* Section Header */}
         <div className="text-center">
-          <h2 className=" text-xl sm:text-4xl font-extrabold text-[#362F4F] mb-3">
+          <h2 className="text-2xl sm:text-4xl font-extrabold text-black mb-3">
             Our Quality Assurance Process
           </h2>
-          
         </div>
 
-        {/* Steps */}
-        <div className="relative border-l-2 border-[#362F4F] pl-10 flex flex-col gap-12">
+        {/* Steps Timeline */}
+        <div className="relative border-l-2 border-black pl-10 flex flex-col gap-12">
           {steps.map((step) => (
-            <div key={step.number} className="relative flex flex-col sm:flex-row gap-4 item-center ">
+            <div key={step.number} className="relative flex flex-col sm:flex-row gap-4 items-center">
+              
               {/* Step Number */}
-              <div className=" w-12 h-12 bg-[#362F4F] text-white font-bold rounded-full flex items-center justify-center text-lg">
+              <div className="w-12 h-12 bg-white text-[#362F4F] font-bold rounded-full flex items-center justify-center text-lg shadow-md">
                 {step.number}
               </div>
 
               {/* Step Content */}
               <div>
-                <h3 className="text-xl font-bold text-[#362F4F] mb-1">
+                <h3 className="text-xl font-bold text-black mb-1">
                   {step.title}
                 </h3>
-                <p className="text-gray-600 text-sm">{step.description}</p>
+                <p className="text-gray-600 text-sm">
+                  {step.description}
+                </p>
               </div>
+
             </div>
           ))}
         </div>

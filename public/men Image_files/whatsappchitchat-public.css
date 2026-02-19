@@ -1,0 +1,436 @@
+/**
+ * All of the CSS for your public-facing functionality should be
+ * included in this file.
+ */
+ 
+#wc_tooltip { position: relative; }
+#wc_tooltip a span { display: none; color: #FFFFFF; }
+#wc_tooltip a:hover span {
+    display: block;
+    position: absolute;
+    width: 200px;
+    background: #aaa; 
+    height: 50px;
+    top: -60px;
+    color: #FFFFFF;
+    padding: 0 5px;
+}
+
+/* whatsapp icon*/
+.wc_public_wrapper>#wc_tooltip>a {
+    position: fixed !important;
+	 z-index: 3;
+    background-color: #189d0e;
+    color: #ffffff;
+    text-align: center;
+    border-radius: 100px;
+    box-shadow: none;
+    display: inline-block;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4) !important;
+    transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out; 
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+}
+.wc_tinybutton>#wc_tooltip>a {
+    position: inherit !important; 
+	z-index:0; 
+}
+.wc_widget>#wc_tooltip>a {
+    position: inherit !important; 
+	border: 6px solid #fff;
+	background-color: #189d0e;
+}
+.wc_public_wrapper>#wc_tooltip>a.wc_large {
+    width: 80px;
+    height: 80px;
+    line-height: 70px; 
+    font-size: 40px;
+    border: 5px solid #fff;
+} 
+.wc_public_wrapper>#wc_tooltip>a.wc_medium {
+    width: 60px;
+    height: 60px;
+    border: 4px solid #fff;
+    font-size: 35px;
+    line-height: 54px; 
+}
+.wc_public_wrapper>#wc_tooltip>a.wc_small { 
+	width: 40px;
+    height: 40px;
+    border: 2px solid #fff;
+    font-size: 20px; 
+    line-height: 36px;
+}
+.wc_public_wrapper>#wc_tooltip>a.wc_bottom_left {
+    left: 25px;
+    bottom: 25px;
+}
+.wc_public_wrapper>#wc_tooltip>a.wc_bottom_left:hover span, .wc_public_wrapper>#wc_tooltip>a.wc_bottom_left:hover span:after {
+	left:20px;
+}
+.wc_public_wrapper>#wc_tooltip>a.wc_small.wc_bottom_left:hover span, .wc_public_wrapper>#wc_tooltip>a.wc_medium.wc_bottom_left:hover span {
+    left: 0;
+}
+.wc_public_wrapper>#wc_tooltip>a.wc_medium.wc_bottom_left:hover span:after {
+    left: 25px;
+}  
+.wc_public_wrapper>#wc_tooltip>a.wc_bottom_right {
+    bottom: 25px;
+    right: 25px; 
+}
+.wc_public_wrapper>#wc_tooltip>a.wc_bottom_right:hover span:after, .wc_public_wrapper>#wc_tooltip>a.wc_bottom_right:hover span {
+    right: 20px;
+	left:auto; 
+}
+.wc_public_wrapper>#wc_tooltip>a.wc_small.wc_bottom_right:hover span, .wc_public_wrapper>#wc_tooltip>a.wc_medium.wc_bottom_right:hover span {
+    right: 0px;
+}
+.wc_public_wrapper>#wc_tooltip>a.wc_medium.wc_bottom_right:hover span:after {
+    right: 25px;
+	left:auto;
+}
+.wc_public_wrapper>#wc_tooltip>a.wc_bottom_right:hover span:after{
+    right: 11px;
+}
+.wc_public_wrapper>#wc_tooltip>a.wc_bottom_center { 
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%); 
+}
+.wc_public_wrapper>#wc_tooltip>a.wc_bottom_center:hover span, .wc_public_wrapper>p>a.wc_bottom_center:hover span:after {
+    left: 49% !important;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+}
+.wc_public_wrapper>#wc_tooltip>a.wc_left_center {
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+}
+.wc_public_wrapper>#wc_tooltip>a.wc_left_center:hover span:after {
+    right: auto;
+    left: 25px;
+}
+.wc_public_wrapper>#wc_tooltip>a.wc_right_center {
+    right: 20px; 
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+}
+.wc_public_wrapper>#wc_tooltip>a.wc_right_center:hover span {
+    right: 0;
+}
+.wc_public_wrapper>#wc_tooltip>a.wc_right_center:hover span:after {
+    right: 11px;
+    left: auto !important;
+}
+.wc_public_wrapper>#wc_tooltip>a>span, .wc_public_share_wrapper>#wc_tooltip>a>span{
+    width: 150px !important; 
+    background: #000000 !important;
+    top: -70px !important; 
+    padding: 2px 5px !important;
+    z-index: 1;
+    border-radius: 10px;
+    font-size: 14px; 
+    line-height: 22px;
+}
+#wc_tooltip a span:after,.wc_public_share_wrapper>#wc_tooltip>a>span:after{
+	content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    top: 100%;
+    left: 20px;
+    z-index: -1;
+    border-left: 8px solid transparent; 
+    border-right: 8px solid transparent;
+    border-top: 10px solid #000;
+}
+#wc_tooltip a span:after, .wc_public_share_wrapper>#wc_tooltip>a.wc_icon_display.wc_small span:after {
+    left: 11px;
+} 
+/**second button**/
+.wc_public_share_wrapper>#wc_tooltip>a {
+    background-color: #189d0e;
+    color:  #ffffff;
+    height:  50px;
+    display:  inline-block;
+    line-height:  50px;
+    padding:  0 15px;
+    font-size:  18px;
+    box-shadow:  none !important;
+}
+.wc_public_wrapper #wc_tooltip a:hover{
+    border-color:#000000;
+	/*color:#000000;*/ 
+}
+.wc_public_share_wrapper #wc_tooltip a.wc_share_icon_display.wc_only_icon span {
+    left: 0;
+}
+.wc_public_share_wrapper #wc_tooltip a.wc_only_icon {
+    font-size: 30px;
+}
+/*----button animation start----*/
+/*grow effect start*/
+#wc_tooltip a.wc_button_grow {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px transparent;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+}
+#wc_tooltip a.wc_button_grow:hover, #wc_tooltip a.wc_button_grow:focus {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1); 
+}
+/*grow effect end*/
+/*shrink effect start*/
+#wc_tooltip a.wc_button_shrink {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px transparent;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+}
+#wc_tooltip a.wc_button_shrink:hover { 
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+}
+/*shrink effect end*/
+/*pulse effect start*/
+#wc_tooltip a.wc_button_pulse {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px transparent;
+}
+#wc_tooltip a.wc_button_pulse:hover, #wc_tooltip a.wc_button_pulse:focus {
+    -webkit-animation-name: wc_hvr_pulse;
+    animation-name: wc_hvr_pulse;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+}
+/* Pulse */
+@-webkit-keyframes wc_hvr_pulse {
+  25% {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+  75% {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+}
+@keyframes wc_hvr_pulse {
+  25% {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+  75% {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+}
+/*pulse effect end*/
+/*buzz effect start*/
+#wc_tooltip a.wc_button_buzz {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px transparent;
+}
+#wc_tooltip a.wc_button_buzz:hover { 
+    -webkit-animation-name: wc_hvr_buzz;
+    animation-name: wc_hvr_buzz;
+    -webkit-animation-duration: 0.15s;
+    animation-duration: 0.15s;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+}
+@-webkit-keyframes wc_hvr_buzz {
+  50% {
+    -webkit-transform: translateX(3px) rotate(2deg);
+    transform: translateX(3px) rotate(2deg);
+  }
+  100% {
+    -webkit-transform: translateX(-3px) rotate(-2deg);
+    transform: translateX(-3px) rotate(-2deg);
+  }
+}
+@keyframes wc_hvr_buzz {
+  50% {
+    -webkit-transform: translateX(3px) rotate(2deg);
+    transform: translateX(3px) rotate(2deg);
+  }
+  100% {
+    -webkit-transform: translateX(-3px) rotate(-2deg);
+    transform: translateX(-3px) rotate(-2deg);
+  }
+}
+/*buzz effect end*/
+/*skew effect start*/
+#wc_tooltip a.wc_button_skew {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px transparent;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+}
+#wc_tooltip a.wc_button_skew:hover {  
+    -webkit-transform: skew(-10deg);
+    transform: skew(-10deg);
+} 
+/*skew effect end*/
+/* wobble-vertica effect start*/
+#wc_tooltip a.wc_button_wobble {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px transparent;
+}
+#wc_tooltip a.wc_button_wobble:hover {
+    -webkit-animation-name: wc_hvr_wobble_vertical;
+    animation-name: wc_hvr_wobble_vertical;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+}
+@-webkit-keyframes wc_hvr_wobble_vertical {
+  16.65% {  
+    -webkit-transform: translateY(8px);
+    transform: translateY(8px);
+  }
+  33.3% { 
+    -webkit-transform: translateY(-6px);
+    transform: translateY(-6px);
+  }
+  49.95% {
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);
+  }
+  66.6% {
+    -webkit-transform: translateY(-2px);
+    transform: translateY(-2px);
+  }
+  83.25% {
+    -webkit-transform: translateY(1px);
+    transform: translateY(1px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+@keyframes wc_hvr_wobble_vertical {
+  16.65% {
+    -webkit-transform: translateY(8px);
+    transform: translateY(8px);
+  }
+  33.3% {
+    -webkit-transform: translateY(-6px);
+    transform: translateY(-6px);
+  }
+  49.95% {
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);
+  }
+  66.6% {
+    -webkit-transform: translateY(-2px);
+    transform: translateY(-2px);
+  }
+  83.25% {
+    -webkit-transform: translateY(1px);
+    transform: translateY(1px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+/* wobble-vertica effect end*/
+/*----button animation end----*/
+
+.wc_public_wrapper.wc_tinybutton {
+    display: inline-block;
+}
+.entry-content #wc_tooltip {
+    display: inline-block;
+    margin: 0;
+} 
+
+.wc_public_share_wrapper {
+    position: relative;
+}
+.wc_public_wrapper>#wc_tooltip>a:before, .wc_public_share_wrapper>#wc_tooltip>a:before {
+    position: absolute;
+    content: '';
+    top: -11px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 4px 6px 0 6px;
+    border-style: solid;
+    border-color: rgba(0,0,0,0.9) transparent transparent transparent;
+    z-index: 99;
+    opacity: 0;
+}
+.wc_public_wrapper>#wc_tooltip>a:after, .wc_public_share_wrapper>#wc_tooltip>a:after {
+    content: attr(tooltip);
+    position: absolute;
+    left: 50%;
+    top: -11px;
+    transform: translateX(-50%) translateY(-100%);
+    background: rgba(0,0,0,0.9);
+    text-align: center;
+    color: #fff;
+    font-size: 12px;
+    min-width: 100px;
+    border-radius: 5px;
+    pointer-events: none;
+    padding: 4px 4px;
+    z-index: 99;
+    opacity: 0;
+    line-height: 20px;
+}
+.wc_public_wrapper>#wc_tooltip>a:hover:after, .wc_public_wrapper>#wc_tooltip>a:hover:before, .wc_public_share_wrapper>#wc_tooltip>a:hover:before, .wc_public_share_wrapper>#wc_tooltip>a:hover:after {
+    opacity: 1; 
+}

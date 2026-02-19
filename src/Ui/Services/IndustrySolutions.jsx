@@ -2,6 +2,7 @@
 import { BriefcaseMedicalIcon, Scale3d, ShoppingBasket } from "lucide-react";
 import React from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 const IndustrySolutions = () => {
   const industries = [
     {
@@ -25,15 +26,25 @@ const IndustrySolutions = () => {
   ];
 
   return (
-    <section className="w-full py-16 ">
+    <section className=" relative w-full py-16 ">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-16">
-
+         <div className="absolute inset-0 -z-10">
+                <Image
+                  src="/services.jpg" // Replace with your background image
+                  alt="Trusted Section Background"
+                  fill
+                  className="object-cover"
+                  priority
+                />
+                {/* Overlay for readability */}
+                <div className="absolute inset-0 bg-black/40"></div>
+              </div>
         {/* Header */}
         <div className="text-center">
-          <h2 className="text-xl sm:text-5xl font-extrabold text-[#362F4F] mb-4">
+          <h2 className="text-xl sm:text-5xl font-extrabold  text-gray-300 mb-4">
             Specialized Industry Solutions
           </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto text-sm text-balance sm:text-base">
+          <p className="text-gray-200 max-w-2xl mx-auto text-sm text-balance sm:text-base">
             Data services tailored to professional requirements, delivered with precision and care.
           </p>
         </div>
