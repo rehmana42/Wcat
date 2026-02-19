@@ -1,3 +1,4 @@
+"use client"
 import {
   HeartPulse,
   Scale,
@@ -7,7 +8,7 @@ import {
   GraduationCap,
 } from "lucide-react";
 import React from "react";
-
+import { motion } from "framer-motion";
 const OurSolutions = () => {
   const industries = [
     {
@@ -84,19 +85,30 @@ const OurSolutions = () => {
 
         {/* Section Header */}
         <div className="text-center">
-          <h2 className="text-3xl sm:text-5xl font-extrabold text-[#362F4F] mb-4">
+          <motion.h2
+             initial={{opacity:0, x:-40}}
+            animate={{opacity:1,x:1}}
+            transition={{duration:1,delay:0.5}}
+          className="text-3xl sm:text-5xl font-extrabold text-[#362F4F] mb-4">
             Industry Workflow Solutions
-          </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          </motion.h2>
+          <motion.p 
+            initial={{opacity:0, x:-40}}
+            animate={{opacity:1,x:1}}
+            transition={{duration:1, delay:0.70}}
+          className="text-gray-600 max-w-2xl mx-auto">
             Tailored data services designed to meet the operational needs of
             different professional industries.
-          </p>
+          </motion.p>
         </div>
 
         {/* Industry Blocks */}
         <div className="flex flex-col gap-12">
           {industries.map((industry, idx) => (
-            <div
+            <motion.div
+            initial={{opacity:0, x:-40}}
+            whileInView={{opacity:1,x:1}}
+            transition={{ delay:idx*0.15,duration:1}}
               key={idx}
               className="border-l-4 border-[#362F4F] pl-6 flex flex-col gap-4"
             >
@@ -129,7 +141,7 @@ const OurSolutions = () => {
               <div className="bg-[#362F4F]/5 text-[#362F4F] text-sm font-medium px-4 py-2 rounded-lg w-fit">
                 Key Benefit: {industry.benefit}
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
 

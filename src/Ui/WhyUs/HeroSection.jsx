@@ -1,5 +1,6 @@
+"use client"
 import React from "react";
-
+import { motion } from "framer-motion";
 const HeroSection = () => {
   const cards = [
     {
@@ -38,7 +39,11 @@ const HeroSection = () => {
     <div className="w-full  py-12">
       <div className=" flex flex-col md:flex-row gap-10">
         {/* Hero Intro */}
-        <div className="md:w-1/2 flex flex-col justify-center gap-4">
+        <motion.div
+         initial={{ opacity:0, x:-50}}
+         animate={{opacity:1, x:1}}
+         transition={{duration:0.50}}
+        className="md:w-1/2 flex flex-col justify-center gap-4">
           <h1 className="text-4xl md:text-5xl font-extrabold text-[#362F4F]">
             Why Us
           </h1>
@@ -64,27 +69,37 @@ Encryption: Secure 256-bit file transfer channels.
 Privacy: Data deleted upon project completion.
 
           </p>
-        </div>
+        </motion.div>
 
         {/* Zig-Zag Compact Cards */}
-        <div className="md:w-1/2 flex flex-col gap-3">
-          {cards.map((card, idx) => (
-            <div
-              key={idx}
-              className={`flex flex-col md:flex-row items-center ${
-                idx % 2 === 0 ? "md:flex-row-reverse" : "md:flex-row"
-              } gap-2`}
-            >
-              <div className="md:w-1/2 bg-white rounded-lg shadow-sm p-3 hover:scale-105 transition-transform duration-200">
-                <h2 className={`text-sm font-bold mb-1 ${card.color}`}>
-                  {card.title}
-                </h2>
-                <p className="text-xs text-gray-600">{card.description}</p>
-              </div>
-              <div className="md:w-1/2 hidden md:block"></div>
-            </div>
-          ))}
-        </div>
+<div className="md:w-1/2 flex flex-col gap-3">
+  {cards.map((card, idx) => (
+    <motion.div
+      animate={{ y: [0, -20, 0] }} // move up and down
+      transition={{
+        duration: 2,
+        repeat: Infinity,      // repeat forever
+        repeatType: "loop",    // loop the animation
+        ease: "easeInOut",
+      }}
+      key={idx}
+      className={`flex flex-col md:flex-row items-center gap-2
+        ${idx % 2 === 0 ? "md:flex-row-reverse" : ""}`}
+    >
+      {/* Card Content */}
+      <div className="w-full md:w-1/2 bg-white rounded-lg shadow-sm p-3 hover:scale-105 transition-transform duration-200">
+        <h2 className={`text-sm font-bold mb-1 ${card.color}`}>
+          {card.title}
+        </h2>
+        <p className="text-xs text-gray-600">{card.description}</p>
+      </div>
+
+      {/* Empty Spacer for Zig-Zag (only on desktop) */}
+      <div className="hidden md:block md:w-1/2"></div>
+    </motion.div>
+  ))}
+</div>
+
       </div>
     </div>
   );

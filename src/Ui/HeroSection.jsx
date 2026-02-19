@@ -1,6 +1,7 @@
 import React from 'react'
 import { Button } from "@/components/ui/button";
 import { ShieldCheck } from 'lucide-react';
+import Link from 'next/link';
 const HeroSection = () => {
   return (
     <div  className="  w-full h-[70vh] flex flex-col sm:flex-row   justify-between  pt-10 sm:pt-[12vh] px-6">
@@ -23,9 +24,16 @@ Are you looking for genuine online typing jobs? Hire in Global connects you with
 
 
     <div className=" flex flex-row gap-4 sm:gap-6 mb-5">
+      <Link
+      href={'/careers'}
+      >
       <Button className={' rounded-full h-12  w-36 text-base sm:text-lg font-bold  transition-all hover:scale-110 text-gray-200 hover:shadow-blue-700 active:scale-125  active:shadow-blue-700 shadow-2xl duration-150 bg-[#4635B1]'}>Apply Now</Button>
+</Link>
 
+        <Link 
+        href={'/services'}>
         <Button className={' rounded-full h-12    w-[40vw] sm:w-44 text-sm sm:text-lg font-bold  transition-all  hover:scale-110 text-gray-200 hover:shadow-blue-700 active:scale-125  active:shadow-blue-700 shadow-2xl duration-150 bg-[#00CAFF]'}>View All Services</Button>
+        </Link>    
     </div>
       </div>
 

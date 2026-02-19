@@ -1,5 +1,6 @@
+"use client"
 import React from "react";
-
+import { motion } from "framer-motion";
 const TrustedSection = () => {
   const reviews = [
     {
@@ -34,14 +35,21 @@ const TrustedSection = () => {
       {/* Review Cards */}
       <div className="flex flex-col md:flex-row gap-6 items-center justify-center">
         {reviews.map((review, idx) => (
-          <div
+          <motion.div
+           initial={{opacity:0, x:-30}}
+           whileInView={{opacity:1, x:3}}
+           transition={{delay:idx*0.15, duration:0.50}}
             key={idx}
-            className="bg-white border border-[#362F4F] rounded-2xl shadow-sm p-6 flex flex-col items-center gap-2 w-48 hover:shadow-md transition-shadow duration-300"
+            className="bg-white border ring-0 hover:ring-1 hover:ring-blue-400 border-[#362F4F] rounded-2xl shadow-sm p-6 flex flex-col items-center gap-2 w-48 hover:shadow-md transition-shadow duration-300"
           >
             <h3 className="font-bold text-lg text-[#362F4F]">{review.platform}</h3>
-            <div className="flex items-center gap-1">
+            <motion.div 
+              whileTap={{ y:-20, scale:1.2}}
+            className="flex items-center gap-1">
               <span className="font-bold text-[#362F4F]">{review.rating}</span>
-              <div className="flex">
+              <div className="flex"
+             
+              >
                 {Array.from({ length: 5 }).map((_, i) => (
                   <span
                     key={i}
@@ -53,9 +61,9 @@ const TrustedSection = () => {
                   </span>
                 ))}
               </div>
-            </div>
+            </motion.div>
             <p className="text-[#362F4F] text-sm">{review.count}</p>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>

@@ -1,5 +1,6 @@
+"use client"
 import React from 'react';
-
+import { motion } from 'framer-motion';
 const HeroSection = () => {
   const services = [
     {
@@ -60,24 +61,39 @@ const HeroSection = () => {
         
         {/* Hero Header */}
         <div className="md:w-full flex flex-col justify-center gap-4 text-center md:text-left">
-          <h1 className="text-4xl md:text-5xl font-extrabold text-[#362F4F]">
-            Our Services
-          </h1>
-          <p className="text-sm md:text-base text-gray-600 text-balance">
-            Comprehensive Data Entry & Document Digitization Services. From high-volume data processing to complex audio transcription, Hire in Global provides accurate, fast, and secure outsourcing solutions tailored to your business needs.
-          </p>
+        <motion.h1
+  initial={{ opacity: 0, x: -40 }}
+  whileInView={{ opacity: 1, x: 0 }}
+  transition={{ duration: 0.8 }}
+  className="text-4xl md:text-5xl font-extrabold mb-4 "
+>
+  Our Services
+</motion.h1>
+
+
+      <motion.p
+        initial={{ opacity: 0, x: -40 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8, delay: 0.5 }} 
+        className="text-sm md:text-base text-gray-600 text-balance"
+      >
+        Comprehensive Data Entry & Document Digitization Services. From high-volume data processing to complex audio transcription, Hire in Global provides accurate, fast, and secure outsourcing solutions tailored to your business needs.
+      </motion.p>
         </div>
 
         {/* Services Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, idx) => (
-            <div
+            <motion.div
+              initial={{opacity:0, x:-40}}
+              whileInView={{opacity:1,x:0}}
+              transition={{delay:idx*0.15, duration:0.70}}
               key={idx}
-              className="bg-white border border-[#362F4F] rounded-xl p-4 shadow-sm  transition-all hover:scale-110 hover:shadow-md   duration-200"
+              className=" border  bg-white/10  rounded-xl p-4 shadow-sm  transition-all hover:scale-110 hover:shadow-md   duration-200"
             >
-              <h3 className="text-[#362F4F] font-bold text-lg mb-1">{service.title}</h3>
-              <p className="text-gray-600 text-sm">{service.description}</p>
-            </div>
+              <h3 className="text-black font-bold text-lg mb-1">{service.title}</h3>
+              <p className="text-gray-900 text-sm">{service.description}</p>
+            </motion.div>
           ))}
         </div>
 

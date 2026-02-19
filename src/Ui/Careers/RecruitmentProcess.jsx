@@ -1,4 +1,6 @@
+"use client"
 import React from "react";
+import { motion } from "framer-motion";
 
 const RecruitmentProcess = () => {
   const steps = [
@@ -19,12 +21,24 @@ const RecruitmentProcess = () => {
     },
   ];
 
+  // Motion variants for each step
+  const stepVariants = {
+    hidden: { opacity: 0, x: -40 },
+    show: { opacity: 1, x: 0, transition: { duration: 0.8, ease: "easeOut" } },
+  };
+
   return (
     <section className="w-full py-24 bg-[#f9fafc]">
       <div className="max-w-6xl mx-auto px-6">
 
         {/* Header */}
-        <div className="text-center mb-20">
+        <motion.div
+          className="text-center mb-20"
+          initial={{ opacity: 0, y: -30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1 }}
+        >
           <h2 className="text-3xl sm:text-5xl font-extrabold text-[#362F4F] mb-4">
             Our Recruitment Process
           </h2>
@@ -33,26 +47,31 @@ const RecruitmentProcess = () => {
             selection process verifies both your identity and your ability
             to deliver accurate, error-free work.
           </p>
-        </div>
+        </motion.div>
 
         {/* Timeline Wrapper */}
         <div className="relative">
 
-          {/* Vertical Line (Desktop Only) */}
-          <div className=" hidden sm:flex place-self-start sm:place-self-center absolute left-1/2 top-0 h-full w-[2px] bg-[#362F4F]/20 transform -translate-x-1/2"></div>
-<div className="  sm:hidden absolute left-1 top-0 h-full w-[2px] bg-[#362F4F]/20 transform -translate-x-1/2"></div>
+          {/* Vertical Line */}
+          <div className="hidden sm:flex absolute left-1/2 top-0 h-full w-[2px] bg-[#362F4F]/20 transform -translate-x-1/2"></div>
+          <div className="sm:hidden absolute left-1 top-0 h-full w-[2px] bg-[#362F4F]/20 transform -translate-x-1/2"></div>
+
           <div className="flex flex-col gap-20">
 
             {steps.map((step, index) => (
-              <div
+              <motion.div
                 key={index}
                 className={`relative flex flex-col md:flex-row items-center ${
                   index % 2 === 0 ? "md:justify-start" : "md:justify-end"
                 }`}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true, amount: 0.3 }}
+                variants={stepVariants}
               >
 
                 {/* Step Content */}
-                <div className=" ml-5 sm:ml-0 md:w-5/12 text-center md:text-left">
+                <div className="ml-5 sm:ml-0 md:w-5/12 text-center md:text-left">
                   <div className="mb-4">
                     <span className="text-sm font-semibold text-[#362F4F]/60">
                       Step {index + 1}
@@ -69,10 +88,24 @@ const RecruitmentProcess = () => {
                 </div>
 
                 {/* Timeline Dot */}
-                <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full bg-[#362F4F]"></div>
-                 {/* for mobile */}
-                  <div className="sm:hidden  absolute left-1 transform -translate-x-1/2 w-6 h-6 rounded-full bg-[#362F4F]"></div>
-              </div>
+                <motion.div
+                  className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full bg-[#362F4F]"
+                  initial={{ scale: 0 }}
+                  whileInView={{ scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: index * 0.2 }}
+                ></motion.div>
+
+                {/* Mobile Dot */}
+                <motion.div
+                  className="sm:hidden absolute left-1 transform -translate-x-1/2 w-6 h-6 rounded-full bg-[#362F4F]"
+                  initial={{ scale: 0 }}
+                  whileInView={{ scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: index * 0.2 }}
+                ></motion.div>
+
+              </motion.div>
             ))}
 
           </div>

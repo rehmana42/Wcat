@@ -51,7 +51,7 @@ const CoursesComponent = () => {
   ];
 
   return (
-    <div className="mt-[15vh] sm:mt-[10vw] w-full flex flex-col gap-10 items-center justify-center px-4 sm:px-6 lg:px-10">
+    <div className="mt-[15vh] sm:mt-2 w-full flex flex-col gap-10 items-center justify-center px-4 sm:px-6 lg:px-10">
       {/* Heading */}
       <div className="flex flex-col items-center justify-center max-w-3xl text-center">
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#362F4F] leading-tight">

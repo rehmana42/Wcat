@@ -1,6 +1,7 @@
+"use client"
 import { BriefcaseMedicalIcon, Scale3d, ShoppingBasket } from "lucide-react";
 import React from "react";
-
+import { motion } from "framer-motion";
 const IndustrySolutions = () => {
   const industries = [
     {
@@ -40,7 +41,11 @@ const IndustrySolutions = () => {
         {/* Cards */}
         <div className="flex flex-col sm:flex-row sm:justify-between gap-8 sm:gap-6">
           {industries.map((industry, idx) => (
-            <div
+            <motion.div
+            initial={{ opacity: 0, y: 20, visibility: "hidden" }}
+            whileInView={{ opacity: 1, y: 0, visibility: "visible" }}
+            viewport={{ once: true }} // animate only first time in view
+            transition={{ delay: idx * 0.15, duration: 0.8, ease: "easeOut" }}
               key={idx}
               className="relative flex flex-col items-center sm:items-start bg-white rounded-3xl p-6 sm:p-8 shadow-lg hover:shadow-xl transition-transform duration-300 flex-1"
             >
@@ -57,7 +62,7 @@ const IndustrySolutions = () => {
 
               {/* Decorative Circle */}
               <div className="absolute -bottom-6 right-6 w-12 h-12 bg-[#362F4F] opacity-10 rounded-full hidden sm:block"></div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
