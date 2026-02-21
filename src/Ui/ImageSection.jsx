@@ -5,7 +5,7 @@ const ImageSection = ({title}) => {
   return (
  <section className="relative w-full h-[300px]  flex items-center justify-center">
       {/* Background Image */}
-      <div className="absolute inset-0 -z-10">
+      <div className="absolute inset-0 z-10">
         <Image
           src="/menj.jpg" // Replace with your image path
           alt="Why Us Background"
@@ -18,9 +18,9 @@ const ImageSection = ({title}) => {
       </div>
 
       {/* Content */}
-      <div className="relative w-full mx-auto  flex flex-col items-center justify-center text-white px-4">
-        <h2 className="text-4xl font-bold mb-4">{title}</h2>
-        <p className="text-lg  text-center">
+      <div className="relative z-12 w-full mx-auto  flex flex-col items-center justify-center text-white px-4">
+        <h2 className="text-4xl font-bold mb-4 text-balance text-start">{title}</h2>
+        <p className="text-lg  text-start text-balance">
           Data Entry Work From Home & Online Typing Jobs | WECAT MANAGEMENT SOLUTIONS PRIVATE LIMITED
         </p>
       </div>

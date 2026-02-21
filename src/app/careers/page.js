@@ -8,7 +8,7 @@ import React from 'react'
 const page = () => {
   return (
  <div className="h-auto flex items-center justify-center">
-  <div className=' flex flex-col rounded-3xl px-6 h-auto w-full mb-4'>
+  <div className=' flex flex-col  h-auto w-full mb-4'>
     <ImageSection title={"Why Choose a Career with Us?"}/>
 <CareerPart1/>
 <RecruitmentProcess/>

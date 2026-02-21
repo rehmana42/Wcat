@@ -1,26 +1,45 @@
+import ImageSection from "@/Ui/ImageSection";
 import React from "react";
 
 const Page = () => {
   return (
+    <>
+    <ImageSection  title={"E-Book Typing Projects"}/>
     <div className="bg-gradient-to-b from-slate-50 to-white text-gray-800">
 
     
 
       {/* ================= HERO ================= */}
-      <section className="relative py-20 md:py-28 px-6 text-center overflow-hidden">
-        <div className="absolute top-0 left-0 w-72 h-72 bg-purple-300/30 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-indigo-300/30 rounded-full blur-3xl"></div>
+      <section className="relative py-14 sm:py-16 md:py-20 px-4 sm:px-6 text-center overflow-hidden bg-gradient-to-br from-slate-50 via-white to-indigo-50">
 
-        <div className="relative max-w-4xl mx-auto">
-          <h2 className="text-4xl md:text-6xl font-extrabold leading-tight tracking-tight mb-6">
-            E-Book Typing Project Recruitment
-          </h2>
-          <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-            A Free Joining Project for Qualified Freelancers. Transform physical
-            books into organized digital assets with high payouts.
-          </p>
-        </div>
-      </section>
+  {/* Decorative Blobs */}
+  <div className="absolute -top-20 -left-20 w-60 sm:w-72 h-60 sm:h-72 bg-purple-400/20 rounded-full blur-3xl"></div>
+  <div className="absolute -bottom-24 -right-20 w-72 sm:w-96 h-72 sm:h-96 bg-indigo-400/20 rounded-full blur-3xl"></div>
+
+  <div className="relative max-w-4xl mx-auto">
+
+    <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight mb-5 bg-gradient-to-r from-indigo-700 to-purple-600 bg-clip-text text-transparent">
+      E-Book Typing Project Recruitment
+    </h2>
+
+    <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-8">
+      A Free Joining Project for Qualified Freelancers. Transform physical
+      books into organized digital assets with high payouts.
+    </p>
+
+    {/* CTA Buttons */}
+    <div className="flex flex-col sm:flex-row justify-center gap-4">
+      <button className="px-6 py-3 bg-indigo-600 text-white rounded-xl font-semibold shadow-lg hover:bg-indigo-700 hover:shadow-xl transition-all duration-300">
+        Apply Now
+      </button>
+
+      <button className="px-6 py-3 bg-white border border-gray-300 rounded-xl font-semibold hover:bg-gray-50 transition">
+        Learn More
+      </button>
+    </div>
+
+  </div>
+</section>
 
       {/* ================= REVIEWS ================= */}
       <section className="py-16 px-6">
@@ -46,16 +65,7 @@ const Page = () => {
       </section>
 
       {/* ================= POLICY ================= */}
-      <section className="px-6 pb-16">
-        <div className="max-w-5xl mx-auto bg-green-50 border border-green-200 rounded-3xl p-8 text-center shadow-md">
-          <p className="text-green-900 font-medium text-lg">
-            <strong>No Hidden Charges Policy:</strong> Hire in Global never asks
-            for postage, arbitration, server maintenance, service charges, or
-            GST to release payments. Be smart, do not pay such charges to anyone.
-          </p>
-        </div>
-      </section>
-
+    
       {/* ================= SAAS TABLE ================= */}
       <section className="py-20 px-6 bg-white">
         <h3 className="text-3xl md:text-4xl font-bold text-center mb-14">
@@ -64,57 +74,69 @@ const Page = () => {
 
         <div className="max-w-7xl mx-auto overflow-x-auto">
           <div className="min-w-[900px] bg-white rounded-3xl shadow-2xl border border-gray-100">
-            <table className="border w-full text-sm md:text-base">
+          <table className="w-full border border-gray-300 border-collapse text-sm md:text-base">
 
-              <thead>
-                <tr className="border-r border-gray-300">
-                  <th className="p-6 text-left text-gray-500 font-medium sticky left-0 bg-white">
-                    Features
-                  </th>
-                  <th className="p-6 font-semibold">
-                    Method 1
-                    <div className="text-xs text-gray-400 font-normal">
-                      CV / Certificate
-                    </div>
-                  </th>
-                  <th className="p-6 bg-indigo-50 font-semibold text-indigo-700">
-                    Method 2
-                    <div className="text-xs text-indigo-400 font-normal">
-                      Typing Exam
-                    </div>
-                  </th>
-                  <th className="p-6 font-semibold">
-                    Method 3
-                    <div className="text-xs text-gray-400 font-normal">
-                      Security Deposit
-                    </div>
-                  </th>
-                </tr>
-              </thead>
+  <thead>
+    <tr className="bg-gray-100 text-center border-b border-gray-300">
+      <th className="p-6 font-semibold text-gray-600 border-r border-gray-300">
+        Features
+      </th>
 
-              <tbody className=" border-r border-gray-500 divide-y divide-gray-100">
-                {[
-                  ["Entry Fee", "No Exam Fee", "₹499", "No Exam Fee"],
-                  ["Requirement", "Typing Certificate (80%)", "Anyone can give Exam", "Submit ₹1999 Deposit"],
-                  ["Contract Validity", "11 Months", "11 Months", "11 Months"],
-                  ["Payout Rate", "₹180 per Page", "₹180 per Page", "₹180 per Page"],
-                ].map((row, i) => (
-                  <tr key={i} className=" border-r border-gray-400 hover:bg-gray-50 transition">
-                    {row.map((cell, j) => (
-                      <td
-                        key={j}
-                        className={`p-6 ${j === 0 ? "font-medium text-gray-700 sticky left-0 bg-white" : ""} ${
-                          j === 2 ? "bg-indigo-50 text-indigo-700 font-semibold" : ""
-                        }`}
-                      >
-                        {cell}
-                      </td>
-                    ))}
-                  </tr>
-                ))}
-              </tbody>
+      <th className="p-6 font-semibold border-r border-gray-300">
+        Method 1
+        <div className="text-xs text-gray-400 font-normal mt-1">
+          CV / Certificate
+        </div>
+      </th>
 
-            </table>
+      <th className="p-6 bg-indigo-50 font-semibold text-indigo-700 border-r border-gray-300">
+        Method 2
+        <div className="text-xs text-indigo-400 font-normal mt-1">
+          Typing Exam
+        </div>
+      </th>
+
+      <th className="p-6 font-semibold">
+        Method 3
+        <div className="text-xs text-gray-400 font-normal mt-1">
+          Security Deposit
+        </div>
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    {[
+      ["Entry Fee", "No Exam Fee", "₹499", "No Exam Fee"],
+      ["Requirement", "Typing Certificate (80%)", "Anyone can give Exam", "Submit ₹1999 Deposit"],
+      ["Contract Validity", "11 Months", "11 Months", "11 Months"],
+      ["Payout Rate", "₹180 per Page", "₹180 per Page", "₹180 per Page"],
+    ].map((row, i) => (
+      <tr
+        key={i}
+        className="text-center border-b border-gray-200 hover:bg-gray-50 transition"
+      >
+        {row.map((cell, j) => (
+          <td
+            key={j}
+            className={`p-6 border-r border-gray-200 ${
+              j === 0
+                ? "font-medium text-gray-700 bg-gray-50"
+                : ""
+            } ${
+              j === 2
+                ? "bg-indigo-50 text-indigo-700 font-semibold"
+                : ""
+            }`}
+          >
+            {cell}
+          </td>
+        ))}
+      </tr>
+    ))}
+  </tbody>
+
+</table>
           </div>
         </div>
       </section>
@@ -214,12 +236,9 @@ const Page = () => {
         </div>
       </section>
 
-      {/* ================= FOOTER ================= */}
-      <footer className="bg-gray-900 text-gray-400 text-center py-8 text-sm">
-        © {new Date().getFullYear()} Hire in Global. All Rights Reserved.
-      </footer>
-
+    
     </div>
+    </>
   );
 };
 

@@ -2,6 +2,7 @@
 import React from "react";
 import { Mail, Smartphone, MapPin, Clock } from "lucide-react";
 import { motion } from "framer-motion";
+import ImageSection from "@/Ui/ImageSection";
 
 const page = () => {
   const cards = [
@@ -12,7 +13,10 @@ const page = () => {
   ];
 
   return (
+    <>
+    <ImageSection title={"Contact us"}/>
     <section className="w-full py-24 bg-[#f9fafb]">
+     
       <div className="max-w-6xl mx-auto px-6 flex flex-col gap-16">
 
         {/* Header */}
@@ -122,6 +126,7 @@ const page = () => {
 
       </div>
     </section>
+    </>
   );
 };
 
