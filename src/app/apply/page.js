@@ -12,28 +12,28 @@ const page = () => {
     },
     {
       title: "Data Entry Specialist",
-       herf:'typing-project',
+       herf:'data-entry',
       description:
         "Input alpha-numeric data into corporate systems. Update CRM records and manage spreadsheets with precision.",
       tasks: ["Excel & database management", "Online form processing", "Data verification protocols"],
     },
     {
       title: "Document Control",
-       herf:'typing-project',
+       herf:'document',
       description:
         "Restore and digitize non-editable files. Correct OCR errors and manually re-type content from PDF/image sources.",
       tasks: ["PDF to Word conversion", "Image-to-text transcription", "Layout reconstruction"],
     },
     {
       title: "Audio Transcriptionist",
-       herf:'typing-project',
+       herf:'audio',
       description:
         "Convert spoken audio into written text. Accurately transcribe interviews, meetings, and dictations.",
       tasks: ["Audio/Video transcription", "Time-stamping services", "Subtitling assistance"],
     },
     {
       title: "Sector Specialist",
-       herf:'typing-project',
+       herf:'Industry',
       description:
         "Specialized data roles needing familiarity with medical, legal, or retail terminology.",
       tasks: ["Medical/Legal data entry", "E-commerce product logs", "Technical formatting"],
