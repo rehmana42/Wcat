@@ -5,12 +5,12 @@ const ImageSection = ({title}) => {
   return (
  <section className="relative w-full h-[300px]  flex items-center justify-center">
       {/* Background Image */}
-      <div className="absolute inset-0 z-10">
+      <div className="absolute top-0 left-0 inset-0 z-10">
         <Image
-          src="/menj.jpg" // Replace with your image path
+          src="/stefan-stefancik-5p_7M5MP2Iw-unsplash.jpg" // Replace with your image path
           alt="Why Us Background"
           fill
-          className="object-cover"
+          className=' object-cover  '
           priority
         />
         {/* Optional overlay for glass/frosted effect */}
